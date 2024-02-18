@@ -85,7 +85,6 @@ export const readOrderItem = async (req, res) => {
    // generated total page 
    const totalPage = Math.ceil(result / limit)
 
-
    res.status(200).json({
       success: true,
       current_page: page-0,

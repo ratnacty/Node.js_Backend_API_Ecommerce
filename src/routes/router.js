@@ -66,7 +66,7 @@ router.get('/search',authToken,authorizePermission(Permission.BROWSE_PRODUCT),se
 router.post('/addToCart',authToken,authorizePermission(Permission.ADD_TOCART), addTocart)
 router.get('/displayCart',authToken,authorizePermission(Permission.SHOW_CART_BYID), showCart)
 router.delete('/deleteCart',authToken,authorizePermission(Permission.DELETE_CART), deleteCart)
-router.delete('/delete/:id',authToken,authorizePermission(Permission.DELETE_CART), deleteCartById)
+router.delete('/deleteCart/:id',authToken,authorizePermission(Permission.DELETE_CART), deleteCartById)
 
 // checkout
 router.post('/checkout',authToken, authorizePermission(Permission.CHECK_OUT), checkOut)

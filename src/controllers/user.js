@@ -80,16 +80,16 @@ export const updateUser = async (req, res) => {
 }
 
 export const deleteUser = async (req, res) => {
-  const userId = Number(req.params.id)
+  const params= Number(req.params.id)
  
-  if(isNaN(userId)){
+  if(isNaN(params)){
     res.status(400).json({message:'Invalid ID'})
     return
   }
 
   try {
     const user = await prisma.user.delete({
-      where: {id: Number(userId)}
+      where: {id: Number(params)}
     }
     )
     res.status(200).json({message: "User deleted successfully", user})
